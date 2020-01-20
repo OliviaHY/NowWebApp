@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nowwebapp
+  labels: 
+    app: nowwebapp
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  selector: 
+    app: nowwebapp
+    version: "1.1"
+  type: LoadBalancer
